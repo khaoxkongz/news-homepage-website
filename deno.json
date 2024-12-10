@@ -1,0 +1,36 @@
+{
+  "tasks": {
+    "dev": "deno run -A --node-modules-dir npm:vite",
+    "build": "deno run -A --node-modules-dir npm:vite build",
+    "preview": "deno run -A --node-modules-dir npm:vite preview",
+    "serve": "deno run --allow-net --allow-read jsr:@std/http@1/file-server dist/",
+    "format": "deno fmt ./",
+    "format:check": "deno fmt --check ./",
+    "format:watch": "deno fmt --watch ./",
+    "lint": "deno lint ./"
+  },
+  "compilerOptions": {
+    "lib": ["ES2020", "DOM", "DOM.Iterable"]
+  },
+  "lint": {
+    "include": ["src/"],
+    "exclude": ["node_modules/", "dist/"],
+    "rules": {
+      "tags": ["recommended"],
+      "include": ["ban-untagged-todo"],
+      "exclude": ["no-unused-vars"]
+    }
+  },
+  "fmt": {
+    "include": ["./"],
+    "exclude": ["node_modules/", "dist/"],
+    "semiColons": false,
+    "singleQuote": true,
+    "lineWidth": 120
+  },
+  "imports": {
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.0",
+    "sass-embedded": "npm:sass-embedded@^1.80.5",
+    "vite": "npm:vite@^5.4.9"
+  }
+}

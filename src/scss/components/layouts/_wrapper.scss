@@ -1,0 +1,37 @@
+@use '../../utils/' as utils;
+
+.noscroll {
+  overflow-y: hidden;
+}
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.gap {
+  --space-gap: #{utils.rem(64)};
+
+  gap: var(--space-gap, #{utils.rem(64)});
+}
+
+.wrapper {
+  width: min(#{utils.rem(1110)}, calc(100% - 2 * #{utils.rem(16)}));
+  margin-inline: auto;
+}
+
+@media (width >= #{utils.em(1110)}) {
+  .grid {
+    --space-gap: #{utils.rem(30)};
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: #{utils.rem(300) auto auto};
+  }
+}

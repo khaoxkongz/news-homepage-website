@@ -1,0 +1,115 @@
+@use 'utils';
+
+:root {
+  --color-softorange: 35 77% 62%;
+  --color-softred: 5 85% 63%;
+  --color-white: 0 0% 100%;
+  --color-offwhite: 36 100% 99%;
+  --color-grayishblue: 233 8% 79%;
+  --color-darkgrayishblue: 236 13% 42%;
+  --color-darkblue: 240 100% 5%;
+
+  --text-xs: #{utils.rem(12)};
+  --text-sm: #{utils.rem(14)};
+  --text-base: #{utils.rem(16)};
+  --text-lg: #{utils.rem(18)};
+  --text-xl: #{utils.rem(20)};
+  --text-2xl: #{utils.rem(24)};
+  --text-3xl: #{utils.rem(30)};
+  --text-4xl: #{utils.rem(36)};
+  --text-5xl: #{utils.rem(48)};
+  --text-6xl: #{utils.rem(60)};
+  --text-7xl: #{utils.rem(72)};
+  --text-8xl: #{utils.rem(96)};
+  --text-9xl: #{utils.rem(128)};
+
+  --font-thin: 100;
+  --font-extralight: 200;
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-size: var(--text-base);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+a {
+  text-decoration: none;
+  transition-property: color, background-color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 150ms;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

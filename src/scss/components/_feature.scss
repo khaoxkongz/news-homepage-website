@@ -1,0 +1,56 @@
+@use '../utils';
+
+.feature {
+  --gap: #{utils.rem(24)};
+
+  display: grid;
+  gap: var(--gap, #{utils.rem(24)});
+}
+
+// .feature__picture {}
+
+.feature__picture-image {
+  width: 100%;
+  height: auto;
+}
+
+.feature__headline {
+  font-size: #{utils.rem(40)};
+  font-size: clamp(#{utils.rem(40)}, 2.147887323943662rem + 1.5023474178403755vw, #{utils.rem(56)});
+  font-weight: var(--font-extrabold);
+  line-height: 1;
+}
+
+.feature__description p {
+  margin-block-end: #{utils.rem(30)};
+}
+
+.feature__button {
+  display: inline-block;
+  font-size: var(--text-sm);
+  font-weight: var(--font-extrabold);
+  letter-spacing: 0.31em;
+  padding-block: #{utils.rem(12)};
+  padding-inline: #{utils.rem(32)};
+  justify-self: self-start;
+}
+
+.feature__button:hover,
+.feature__button:focus {
+  color: hsl(var(--color-softorange));
+  background-color: hsl(var(--color-darkblue));
+}
+
+@media (width >= #{utils.em(1110)}) {
+  .feature {
+    gap: #{utils.rem(30)};
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }
+
+  .feature__picture {
+    grid-column: 1 / 3;
+  }
+}

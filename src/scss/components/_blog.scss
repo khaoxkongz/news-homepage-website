@@ -1,0 +1,54 @@
+@use '../utils';
+
+.blog {
+  display: grid;
+  gap: #{utils.rem(30)};
+}
+
+.blog__item {
+  display: grid;
+  grid-template-columns: #{utils.rem(100)} auto;
+  grid-template-rows: repeat(3, auto);
+  row-gap: #{utils.rem(10)};
+  column-gap: #{utils.rem(24)};
+}
+
+.blog__image {
+  grid-row: 1 / 4;
+}
+
+.blog__number {
+  color: hsl(var(--color-grayishblue));
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  line-height: 1;
+}
+
+.blog__headline {
+  align-self: center;
+}
+
+.blog__headline-link {
+  color: hsl(var(--color-darkblue));
+  font-size: var(--text-lg);
+  font-weight: var(--font-extrabold);
+  line-height: 1.1;
+}
+
+.blog__headline-link:hover,
+.blog__headline-link:focus {
+  color: hsl(var(--color-softred));
+}
+
+.blog__description {
+  align-self: end;
+}
+
+@media (width >= #{utils.em(1110)}) {
+  .blog {
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+    grid-column: 1 / -1;
+    padding-block-start: #{utils.rem(40)};
+  }
+}
